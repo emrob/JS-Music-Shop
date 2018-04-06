@@ -15,15 +15,33 @@ RecordStore.prototype.numOfRecords = function () {
   return this.inventory.length
 };
 
+
 RecordStore.prototype.sellrecord = function (title) {
  var remainingInventory = [];
+ var sold = [];
   for (var i = 0; i < this.inventory.length; i++) {
     if (this.inventory[i].title !== title) {
       remainingInventory.push(this.inventory[i]);
+      if ((this.inventory[i].title == title))
+      sold.push(this.inventory[i])
     }
   }
   this.inventory = remainingInventory;
 }
+
+
+RecordStore.prototype.filterByGenre = function (genre) {
+var filteredByGenre = [];
+ for (var i = 0; i < this.inventory.length; i++) {
+   if (this.inventory[i].genre === genre) {
+     filteredByGenre.push(this.inventory[i]);
+
+   }
+ }
+
+return filteredByGenre.length
+}
+
 
 
 

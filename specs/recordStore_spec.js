@@ -9,7 +9,7 @@ var record, record1, recordStore
 
 beforeEach(function(){
   recordStore = new RecordStore("Music Shop", "Glasgow");
-  record = new Record("The Beatles", "Yellow Submarine", "pop", 10);
+  record = new Record("The Beatles", "Yellow Submarine", "pop-rock", 10);
   record1 = new Record("Michael Jackson", "Thriller", "pop", 10);
   recordStore.addRecord(record);
   recordStore.addRecord(record1);
@@ -22,7 +22,7 @@ beforeEach(function(){
   it("should have a balance", function(){
     assert.strictEqual(recordStore.balance, 0)
   });
- 
+
 
   // it("list inventory", function(){
   //   assert.strictEqual(recordStore.inventory, ["The Beatles", "Yellow Submarine", "pop", 10])
@@ -33,7 +33,9 @@ beforeEach(function(){
     assert.strictEqual(recordStore.inventory.length, 1)
   });
 
-
+  it("should filter by genre", function(){
+    assert.strictEqual(recordStore.filterByGenre("pop"), 1)
+  });
 
 
 })
