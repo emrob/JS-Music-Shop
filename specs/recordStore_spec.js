@@ -17,4 +17,9 @@ beforeEach(function(){
     assert.strictEqual(recordStore.name, "Music Shop")
   });
 
+  it("should have a balance", function(){
+    assert.strictEqual(recordStore.balance, 0)
+  });
+
+
 })

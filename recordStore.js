@@ -11,4 +11,8 @@ RecordStore.prototype.addRecord = function (record) {
   this.inventory.push(record)
 };
 
+RecordStore.prototype.numOfRecords = function () {
+  return this.inventory.length
+};
+
 module.exports = RecordStore;
