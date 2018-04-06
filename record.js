@@ -7,4 +7,11 @@ var Record = function(artist, title, genre, price) {
   this.price = price;
 }
 
+
+Record.prototype.recordToString = function () {
+  return `The record is ${this.artist}, ${this.title}, ${this.genre}, and costs ${this.price}`
+
+};
+
+
 module.exports = Record;
