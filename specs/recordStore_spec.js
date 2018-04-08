@@ -45,5 +45,11 @@ beforeEach(function(){
     assert.strictEqual(recordStore.sold(record1), 10)
   });
 
+  it("Create a method that reports the financial situation of the Store, showing the balance and value of inventory.", function(){
+    assert.strictEqual(recordStore.valueOfStore(), 20)
+  });
+
+
+
 
 })

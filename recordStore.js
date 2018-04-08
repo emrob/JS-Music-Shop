@@ -56,7 +56,11 @@ RecordStore.prototype.sold = function (record) {
 
 }
 
-
+RecordStore.prototype.valueOfStore = function () {
+   let inventorySum = _.sumBy(this.inventory, 'price');
+   let storeValue = inventorySum += this.balance;
+   return storeValue;
+}
 
 
 
