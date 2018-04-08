@@ -1,6 +1,7 @@
-var _ = require("lodash")
+var _ = require("lodash");
 
-var RecordStore = function(name, city){
+
+var RecordStore = function(name, city, balance){
   this.name = name;
   this.city = city;
   this.inventory = [];
@@ -30,6 +31,8 @@ RecordStore.prototype.sellrecord = function (title) {
 }
 
 
+
+
 RecordStore.prototype.filterByGenre = function (genre) {
 var filteredByGenre = [];
  for (var i = 0; i < this.inventory.length; i++) {
@@ -43,13 +46,15 @@ return filteredByGenre.length
 }
 
 
-// RecordStore.prototype.sumOfInventory = function () {
-//      for (record.price in this.inventory) {
-//        return this.inventory.reduce(function (total,number){
-//      }
-//
-//    }, 0)
-//  }
+RecordStore.prototype.sumOfInventory = function () {
+  let inventorySum = _.sumBy(this.inventory, 'price');
+  return inventorySum;
+};
+
+RecordStore.prototype.sold = function (record) {
+  return this.balance += record.price;
+
+}
 
 
 

@@ -8,7 +8,7 @@ describe('record store', function() {
 var record, record1, recordStore
 
 beforeEach(function(){
-  recordStore = new RecordStore("Music Shop", "Glasgow");
+  recordStore = new RecordStore("Music Shop", "Glasgow", 0);
   record = new Record("The Beatles", "Yellow Submarine", "pop-rock", 10);
   record1 = new Record("Michael Jackson", "Thriller", "pop", 10);
   recordStore.addRecord(record);
@@ -38,7 +38,12 @@ beforeEach(function(){
   });
 
   it("should return total value of inventory", function(){
-    assert.strictEqual(recordStore.sumOfInventory, 20)
+    assert.deepStrictEqual(recordStore.sumOfInventory(), 20)
   });
+
+  it("Create a method so the Record Store can sell a Record and adjusts the Store's balance to account for the Record being sold.", function(){
+    assert.strictEqual(recordStore.sold(record1), 10)
+  });
+
 
 })
