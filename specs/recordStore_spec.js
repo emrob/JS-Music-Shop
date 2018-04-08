@@ -37,5 +37,8 @@ beforeEach(function(){
     assert.strictEqual(recordStore.filterByGenre("pop"), 1)
   });
 
+  it("should return total value of inventory", function(){
+    assert.strictEqual(recordStore.sumOfInventory, 20)
+  });
 
 })

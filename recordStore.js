@@ -43,9 +43,13 @@ return filteredByGenre.length
 }
 
 
-
-
-
+// RecordStore.prototype.sumOfInventory = function () {
+//      for (record.price in this.inventory) {
+//        return this.inventory.reduce(function (total,number){
+//      }
+//
+//    }, 0)
+//  }
 
 
 
