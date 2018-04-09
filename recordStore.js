@@ -42,7 +42,7 @@ var filteredByGenre = [];
    }
  }
 
-return filteredByGenre.length
+return filteredByGenre
 }
 
 
@@ -53,7 +53,6 @@ RecordStore.prototype.sumOfInventory = function () {
 
 RecordStore.prototype.sold = function (record) {
   return this.balance += record.price;
-
 }
 
 RecordStore.prototype.valueOfStore = function () {
@@ -61,7 +60,7 @@ RecordStore.prototype.valueOfStore = function () {
    let storeValue = inventorySum += this.balance;
    return storeValue;
 }
-
+//how do i bring in sumOfInventory from above into this function?
 
 
 

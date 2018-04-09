@@ -34,8 +34,9 @@ beforeEach(function(){
   });
 
   it("should filter by genre", function(){
-    assert.strictEqual(recordStore.filterByGenre("pop"), 1)
+    assert.deepStrictEqual(recordStore.filterByGenre("pop"), [record1])
   });
+
 
   it("should return total value of inventory", function(){
     assert.deepStrictEqual(recordStore.sumOfInventory(), 20)
