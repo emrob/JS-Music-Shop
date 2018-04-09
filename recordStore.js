@@ -55,14 +55,18 @@ RecordStore.prototype.sold = function (record) {
   return this.balance += record.price;
 }
 
+// RecordStore.prototype.valueOfStore = function () {
+//    let inventorySum = _.sumBy(this.inventory, 'price');
+//    let storeValue = inventorySum += this.balance;
+//    return storeValue;
+// }
+//how do i bring in sumOfInventory from above into this function? this.sum - see below:
+
+
 RecordStore.prototype.valueOfStore = function () {
-   let inventorySum = _.sumBy(this.inventory, 'price');
+   inventorySum = this.sumOfInventory();
    let storeValue = inventorySum += this.balance;
    return storeValue;
 }
-//how do i bring in sumOfInventory from above into this function?
-
-
-
 
 module.exports = RecordStore;
